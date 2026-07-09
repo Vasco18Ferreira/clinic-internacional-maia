@@ -159,7 +159,70 @@ header {
     color: var(--white);
     margin-bottom: 15px;
   }
+/* ORGANIZAÇÃO E PARCEIROS */
 
+.partners{
+  background:#ffffff;
+  padding:90px 20px;
+  text-align:center;
+}
+
+.partners h2{
+  color:var(--blue);
+  margin-bottom:18px;
+}
+
+.partner-title{
+  text-transform:uppercase;
+  font-size:14px;
+  letter-spacing:3px;
+  color:#777;
+  margin-bottom:25px;
+}
+
+.organizer-logo{
+  margin-bottom:55px;
+}
+
+.organizer-logo img{
+  max-width:260px;
+  width:100%;
+  height:auto;
+}
+
+.partner-divider{
+  width:140px;
+  height:2px;
+  background:var(--red);
+  margin:0 auto 45px;
+}
+
+.partners-grid{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:45px;
+  flex-wrap:wrap;
+}
+
+.partner-logo{
+  width:170px;
+  height:90px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.partner-logo img{
+  max-width:150px;
+  max-height:70px;
+  object-fit:contain;
+  transition:.25s;
+}
+
+.partner-logo img:hover{
+  transform:scale(1.06);
+}
   footer {
     background: var(--blue);
     color: var(--white);
@@ -558,6 +621,49 @@ header {
   </div>
 </section>
 
+<section class="partners">
+
+    <div class="container">
+
+        <h2>Organização e Parceiros Institucionais</h2>
+
+        <p class="partner-title">
+            Organização
+        </p>
+
+        <div class="organizer-logo">
+            <img src="assets/maia-basket.png" alt="Maia Basket Clube">
+        </div>
+
+        <div class="partner-divider"></div>
+
+        <p class="partner-title">
+            Com o apoio de
+        </p>
+
+        <div class="partners-grid">
+
+            <div class="partner-logo">
+                <img src="assets/fpb.png" alt="FPB">
+            </div>
+
+            <div class="partner-logo">
+                <img src="assets/antb.png" alt="ANTB">
+            </div>
+
+            <div class="partner-logo">
+                <img src="assets/ipdj.png" alt="IPDJ">
+            </div>
+
+            <div class="partner-logo">
+                <img src="assets/cmm.png" alt="Câmara Municipal da Maia">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 <footer>
   <h3>Maia Basket Clube</h3>
   <p>I Clinic Internacional Cidade da Maia — 29 e 30 de Agosto de 2026</p>
