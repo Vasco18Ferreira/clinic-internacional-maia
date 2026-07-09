@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I Clinic Internacional Cidade da Maia</title>
+
+<style>
+  :root {
+    --blue: #061b3a;
+    --red: #d71920;
+    --white: #ffffff;
+    --light: #f4f6f9;
+    --dark: #111111;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    color: var(--dark);
+    background: var(--light);
+    line-height: 1.6;
+  }
+
+  header {
+    min-height: 90vh;
+    background:
+      linear-gradient(rgba(6, 27, 58, 0.78), rgba(6, 27, 58, 0.92)),
+      url("clinic-capa.jpg");
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    padding: 40px 20px;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1180px;
+    margin: auto;
+  }
+
+  .hero {
+    max-width: 780px;
+  }
+
+  .tag {
+    display: inline-block;
+    background: var(--red);
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: clamp(42px, 8vw, 86px);
+    line-height: 0.95;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+
+  .subtitle {
+    font-size: 22px;
+    margin-bottom: 25px;
+    max-width: 650px;
+  }
+
+  .info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin: 30px 0;
+  }
+
+  .info div {
+    background: rgba(255,255,255,0.12);
+    padding: 14px;
+    border-radius: 12px;
+    backdrop-filter: blur(4px);
+  }
+
+  .btn {
+    display: inline-block;
+    background: var(--red);
+    color: var(--white);
+    padding: 15px 26px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+
+  section {
+    padding: 70px 20px;
+  }
+
+  section.white {
+    background: var(--white);
+  }
+
+  h2 {
+    font-size: 38px;
+    color: var(--blue);
+    margin-bottom: 25px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+  }
+
+  .card {
+    background: var(--white);
+    padding: 26px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  }
+
+  .white .card {
+    background: var(--light);
+  }
+
+  .card h3 {
+    color: var(--blue);
+    margin-bottom: 10px;
+  }
+
+  .price {
+    font-size: 30px;
+    color: var(--red);
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  .programa {
+    border-left: 5px solid var(--red);
+    padding-left: 20px;
+    margin-bottom: 24px;
+  }
+
+  .programa p {
+    margin: 8px 0;
+  }
+
+  .mapa {
+    background: var(--blue);
+    color: var(--white);
+    border-radius: 18px;
+    padding: 30px;
+  }
+
+  .mapa h3 {
+    color: var(--white);
+    margin-bottom: 15px;
+  }
+
+  footer {
+    background: var(--blue);
+    color: var(--white);
+    text-align: center;
+    padding: 35px 20px;
+  }
+
+  .small {
+    font-size: 14px;
+    opacity: 0.85;
+  }
+
+  /* FORMADORES - MOSAICO */
+.speaker-card {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 500px;
+}
+
+.speaker-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  background: #f8f9fb;
+  padding: 8px;
+}
+
+.speaker-card h3 {
+  padding: 18px 20px 0;
+  font-size: 22px;
+}
+
+.speaker-card p {
+  padding: 4px 20px;
+  font-weight: bold;
+  color: var(--red);
+}
+
+.speaker-card span {
+  display: block;
+  padding: 0 20px 22px;
+  font-size: 14px;
+  flex-grow: 1;
+}
+
+@media (max-width: 900px) {
+  .speakers {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .speakers {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 46px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container hero">
+    <span class="tag">Créditos IPDJ 3.0 · Valor máximo</span>
+
+    <h1>I Clinic Internacional<br>Cidade da Maia</h1>
+
+    <p class="subtitle">
+      Dois dias de formação avançada para treinadores, com sessões práticas e teóricas orientadas por formadores nacionais e internacionais.
+    </p>
+
+    <div class="info">
+      <div><strong>📅 29 e 30 Agosto</strong><br>2026</div>
+      <div><strong>📍 Local</strong><br>Pavilhão Municipal da Nortecoop</div>
+      <div><strong>⏱️ Carga Horária</strong><br>15 horas presenciais</div>
+      <div><strong>🎓 Créditos</strong><br>IPDJ 3.0</div>
+    </div>
+
+    <a class="btn" href="COLOCAR-LINK-GOOGLE-FORMS" target="_blank">
+      Inscrições em breve
+    </a>
+  </div>
+</header>
+
+<section class="white">
+  <div class="container">
+    <h2>Sobre o Clinic</h2>
+
+    <p>
+      O I Clinic Internacional Cidade da Maia é uma ação de formação certificada, organizada pelo Maia Basket Clube, dirigida a treinadores que procuram aprofundar conhecimento técnico, tático e metodológico.
+    </p>
+
+    <br>
+
+    <p>
+      Ao longo de dois dias, o Clinic contará com sessões práticas e teóricas, num total de 15 horas presenciais, abordando temas como lançamento, tática individual, pressão defensiva, transição ofensiva, pick and roll, comunicação treinador/árbitro e desenvolvimento de jogadores.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Formadores Confirmados</h2>
+
+    <div class="grid speakers">
+
+      <div class="card speaker-card">
+        <img src="assets/goran.jpg" alt="Goran Nogic">
+        <h3>Goran Nogic</h3>
+        <p>Formador convidado</p>
+        <span>Tática individual · Lançamento · Desenvolvimento de jogadores</span>
+      </div>
+
+      <div class="card speaker-card">
+        <img src="assets/moncho.jpg" alt="Moncho López">
+        <h3>Moncho López</h3>
+        <p>Formador convidado</p>
+        <span>Pressão defensiva após ressalto ofensivo</span>
+      </div>
+
+      <div class="card speaker-card">
+        <img src="assets/jose-ricardo.jpg" alt="José ricardo">
+        <h3>José Ricardo</h3>
+        <p>Formador convidado</p>
+        <span>Da formação à competição</span>
+      </div>
+
+      <div class="card speaker-card">
+        <img src="assets/isabel.jpg" alt="Isabel Lemos">
+        <h3>Isabel Lemos</h3>
+        <p>Formadora convidada</p>
+        <span>Ações ofensivas fora da bola no pick and roll</span>
+      </div>
+
+      <div class="card speaker-card">
+        <img src="assets/pedro.jpg" alt="Pedro Paiva">
+        <h3>Pedro Paiva</h3>
+        <p>Formador convidado</p>
+        <span>Ferramentas técnicas em contexto de jogo coletivo</span>
+      </div>
+
+      <div class="card speaker-card">
+        <img src="assets/nuno-rodrigues.jpg" alt="Nuno Rodrigues">
+        <h3>Nuno Rodrigues</h3>
+        <p>Formador convidado</p>
+        <span>Transição · Quick offense</span>
+      </div>
+
+      <div class="card speaker-card">
+        <img src="assets/paulo-neta.jpg" alt="Paulo Neta">
+        <h3>Paulo Neta</h3>
+        <p>Formador convidado</p>
+        <span>O treinador como parte de um sistema</span>
+      </div>
+
+      <div class="card speaker-card">
+        <img src="assets/nuno-monteiro.jpg" alt="Nuno Monteiro">
+        <h3>Nuno Monteiro</h3>
+        <p>Formador convidado</p>
+        <span>Faltas antidesportivas · Comunicação árbitro/treinador</span>
+      </div>
+
+      <div class="card speaker-card">
+        <img src="assets/joao-figueiredo.jpg" alt="João Figueiredo">
+        <h3>João Figueiredo</h3>
+        <p>Formador convidado</p>
+        <span>Pick and roll · Soluções ofensivas e defesa agressiva</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="white">
+  <div class="container">
+    <h2>Programa</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Sábado, 29 Agosto</h3>
+        <div class="programa">
+          <p><strong>09h00 - 12h45</strong> — Sessões da manhã</p>
+          <p><strong>12h45 - 14h45</strong> — Pausa para almoço</p>
+          <p><strong>14h45 - 18h30</strong> — Sessões da tarde</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Domingo, 30 Agosto</h3>
+        <div class="programa">
+          <p><strong>09h00 - 12h45</strong> — Sessões da manhã</p>
+          <p><strong>12h45 - 14h45</strong> — Pausa para almoço</p>
+          <p><strong>14h45 - 18h30</strong> — Sessões da tarde</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="small">Programa detalhado sujeito a confirmação final.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Inscrição</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Inscrição Geral</h3>
+        <p>Acesso aos dois dias do Clinic.</p>
+        <div class="price">40€</div>
+      </div>
+
+      <div class="card">
+        <h3>Certificação</h3>
+        <p>Ação creditada com 3.0 créditos IPDJ.</p>
+        <div class="price">3.0</div>
+      </div>
+
+      <div class="card">
+        <h3>Vagas Previstas</h3>
+        <p>Número estimado de candidatos.</p>
+        <div class="price">200</div>
+      </div>
+    </div>
+
+    <br>
+
+    <a class="btn" href="https://forms.gle/EXb84ibEogxBvDj16" target="_blank">
+      Inscreve-te aqui
+    </a>
+  </div>
+</section>
+
+<section class="white">
+  <div class="container">
+    <h2>Onde almoçar</h2>
+    <p>
+      Para apoiar os nossos parceiros locais e facilitar a logística dos participantes, teremos menus especiais em restaurantes próximos do pavilhão.
+      A escolha do restaurante será feita no formulário de inscrição.
+    </p>
+
+    <br>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Restaurante 1</h3>
+        <p><strong>Menu:</strong> a confirmar</p>
+        <p><strong>Valor:</strong> a confirmar</p>
+        <p><strong>Distância:</strong> perto do pavilhão</p>
+        <p><strong>Lugares:</strong> limitados</p>
+      </div>
+
+      <div class="card">
+        <h3>Restaurante 2</h3>
+        <p><strong>Menu:</strong> a confirmar</p>
+        <p><strong>Valor:</strong> a confirmar</p>
+        <p><strong>Distância:</strong> perto do pavilhão</p>
+        <p><strong>Lugares:</strong> limitados</p>
+      </div>
+
+      <div class="card">
+        <h3>Restaurante 3</h3>
+        <p><strong>Menu:</strong> a confirmar</p>
+        <p><strong>Valor:</strong> a confirmar</p>
+        <p><strong>Distância:</strong> perto do pavilhão</p>
+        <p><strong>Lugares:</strong> limitados</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Localização</h2>
+
+    <div class="mapa">
+      <h3>📍 Pavilhão Municipal da Nortecoop</h3>
+      <p>
+        O evento decorrerá no Pavilhão Municipal da Nortecoop, com restaurantes parceiros localizados a curta distância a pé.
+      </p>
+      <br>
+      <p>🅿️ Estacionamento nas proximidades</p>
+      <p>🍽️ Restaurantes parceiros próximos</p>
+      <p>🚶 Deslocações possíveis a pé</p>
+    </div>
+  </div>
+</section>
+
+<section class="white">
+  <div class="container">
+    <h2>Perguntas frequentes</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>O Clinic dá créditos IPDJ?</h3>
+        <p>Sim. O Clinic tem aprovação para créditos IPDJ 3.0.</p>
+      </div>
+
+      <div class="card">
+        <h3>O almoço está incluído?</h3>
+        <p>Não. Os participantes poderão reservar menu nos restaurantes parceiros através do formulário.</p>
+      </div>
+
+      <div class="card">
+        <h3>Como faço o pagamento?</h3>
+        <p>As informações de pagamento serão enviadas após o preenchimento do formulário.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <h3>Maia Basket Clube</h3>
+  <p>I Clinic Internacional Cidade da Maia — 29 e 30 de Agosto de 2026</p>
+  <p class="small">Contactos: email@maiabasket.pt | 9XX XXX XXX</p>
+</footer>
+
+</body>
+</html>
