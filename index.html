@@ -308,10 +308,17 @@ header {
   font-size: 22px;
 }
 
-.speaker-card p {
+.speaker-card > p {
   padding: 4px 20px;
   font-weight: bold;
   color: var(--red);
+}
+
+.speaker-bio p {
+  margin: 16px 0 0;
+  padding: 0;
+  font-weight: normal;
+  color: #444;
 }
 
 .speaker-card span {
@@ -872,14 +879,20 @@ header {
 
   updateCountdown();
   setInterval(updateCountdown, 1000);
-  
+
   function toggleBio(button) {
     const bio = button.nextElementSibling;
+
+    if (!bio || !bio.classList.contains("speaker-bio")) {
+      console.error("Biografia não encontrada junto ao botão.");
+      return;
+    }
+
     const estaAberta = bio.classList.toggle("open");
 
     button.textContent = estaAberta
-      ? "Ocultar biografia"
-      : "Ver biografia";
+      ? "Ocultar percurso"
+      : "Ver percurso";
   }
 </script>
 </body>
