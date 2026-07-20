@@ -314,18 +314,23 @@ header {
   color: var(--red);
 }
 
+.speaker-bio {
+  display: none;
+  padding: 0 20px 22px;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #444;
+}
+
+.speaker-bio.open {
+  display: block;
+}
+
 .speaker-bio p {
   margin: 16px 0 0;
   padding: 0;
   font-weight: normal;
   color: #444;
-}
-
-.speaker-card span {
-  display: block;
-  padding: 0 20px 22px;
-  font-size: 14px;
-  flex-grow: 1;
 }
 
 .bio-button {
