@@ -321,6 +321,34 @@ header {
   flex-grow: 1;
 }
 
+.bio-button {
+  margin: 0 20px 22px;
+  padding: 10px 14px;
+  border: 1px solid var(--blue);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--blue);
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.bio-button:hover {
+  background: var(--blue);
+  color: var(--white);
+}
+
+.speaker-bio {
+  display: none;
+  padding: 0 20px 22px;
+  font-size: 14px;
+  color: #444;
+}
+
+.speaker-bio.open {
+  display: block;
+}
+
 @media (max-width: 900px) {
   .speakers {
     grid-template-columns: 1fr 1fr;
@@ -421,6 +449,26 @@ header {
         <h3>Goran Nogic</h3>
         <p>Formador convidado</p>
         <span>Tática individual · Lançamento · Desenvolvimento de jogadores</span>
+
+        <button class="bio-button" type="button" onclick="toggleBio(this)">
+          Ver percurso
+        </button>
+
+        <div class="speaker-bio">
+          <p>
+            Treinador sérvio com mais de três décadas de experiência no desenvolvimento
+            de jogadores e equipas. Iniciou a carreira na Sérvia e conquistou o
+            campeonato nacional de juniores ao serviço do Partizan, onde trabalhou com
+            atletas que chegaram ao mais alto nível internacional.
+          </p>
+
+          <p>
+            Em Portugal, passou por clubes como Estoril Praia, Imortal, Barreirense e
+            SL Benfica, assumindo também funções de coordenação da formação. Especialista
+            no aperfeiçoamento técnico individual, traz ao Clinic uma abordagem prática
+            sobre lançamento, tomada de decisão e construção de jogadores.
+          </p>
+        </div>
       </div>
 
       <div class="card speaker-card">
@@ -428,13 +476,55 @@ header {
         <h3>Moncho López</h3>
         <p>Formador convidado</p>
         <span>Pressão defensiva após ressalto ofensivo</span>
+
+        <button class="bio-button" type="button" onclick="toggleBio(this)">
+          Ver percurso
+        </button>
+
+        <div class="speaker-bio">
+          <p>
+            Treinador espanhol com um percurso de referência no basquetebol europeu.
+            Foi selecionador nacional de Espanha, conduzindo a seleção à medalha de
+            prata no Campeonato da Europa de 2003, e posteriormente selecionador
+            nacional sénior masculino de Portugal.
+          </p>
+
+          <p>
+            Em Portugal, orientou o FC Porto, conquistando a Liga Portuguesa, Taças de
+            Portugal, Taças Hugo dos Santos e a Supertaça. Com experiência na ACB,
+            em seleções nacionais e no desenvolvimento de jovens jogadores, apresenta
+            uma visão de alto rendimento sobre intensidade, reação e organização
+            defensiva.
+          </p>
+        </div>
       </div>
 
       <div class="card speaker-card">
-        <img src="assets/jose-ricardo.jpg" alt="José ricardo">
-        <h3>José Ricardo</h3>
+        <img src="assets/jose-ricardo.jpg" alt="José Ricardo Rodrigues">
+        <h3>José Ricardo Rodrigues</h3>
         <p>Formador convidado</p>
         <span>Da formação à competição</span>
+
+        <button class="bio-button" type="button" onclick="toggleBio(this)">
+          Ver percurso
+        </button>
+
+        <div class="speaker-bio">
+          <p>
+            Um dos treinadores mais experientes do basquetebol português, com um
+            percurso que atravessa a formação, a Liga principal, a Proliga e as
+            Seleções Nacionais. Orientou clubes como BC Barcelos e SL Benfica e foi
+            selecionador nacional masculino de Sub-20.
+          </p>
+
+          <p>
+            Reconhecido pela clareza dos seus princípios de jogo, pela preparação
+            defensiva e pela capacidade de transformar conceitos de formação em
+            rendimento competitivo. Atualmente treinador principal do CD Póvoa,
+            abordará no Clinic a passagem decisiva entre formar um jogador e prepará-lo
+            para competir.
+          </p>
+        </div>
       </div>
 
       <div class="card speaker-card">
@@ -442,6 +532,27 @@ header {
         <h3>Isabel Lemos</h3>
         <p>Formadora convidada</p>
         <span>Ações ofensivas fora da bola no pick and roll</span>
+
+        <button class="bio-button" type="button" onclick="toggleBio(this)">
+          Ver percurso
+        </button>
+
+        <div class="speaker-bio">
+          <p>
+            Treinadora e coordenadora técnica com uma carreira profundamente ligada
+            à formação e ao desenvolvimento de jovens jogadores. Foi responsável por
+            estruturas de formação em Portugal, integrou equipas técnicas de alto nível
+            e acumulou experiência como Diretora Técnica Regional.
+          </p>
+
+          <p>
+            Atualmente é Coordenadora Técnica do Ourense Baloncesto, em Espanha.
+            A sua experiência na organização de programas de formação e na ligação
+            entre desenvolvimento individual e jogo coletivo confere particular
+            relevância à sessão dedicada às ações ofensivas fora da bola no
+            pick and roll.
+          </p>
+        </div>
       </div>
 
       <div class="card speaker-card">
@@ -449,6 +560,19 @@ header {
         <h3>Pedro Paiva</h3>
         <p>Formador convidado</p>
         <span>Ferramentas técnicas em contexto de jogo coletivo</span>
+
+        <button class="bio-button" type="button" onclick="toggleBio(this)">
+          Ver percurso
+        </button>
+
+        <div class="speaker-bio">
+          <p>
+            Treinador do Maia Basket Clube, com experiência no acompanhamento
+            e desenvolvimento de equipas e atletas dos escalões de formação.
+            O seu trabalho está ligado à evolução técnica e coletiva dos
+            jovens jogadores.
+          </p>
+        </div>
       </div>
 
       <div class="card speaker-card">
@@ -456,6 +580,27 @@ header {
         <h3>Nuno Rodrigues</h3>
         <p>Formador convidado</p>
         <span>Transição · Quick offense</span>
+
+        <button class="bio-button" type="button" onclick="toggleBio(this)">
+          Ver percurso
+        </button>
+
+        <div class="speaker-bio">
+          <p>
+            Treinador com mais de duas décadas de experiência no basquetebol português.
+            Construiu grande parte do seu percurso no Sport Lisboa e Benfica, onde
+            trabalhou durante cerca de 14 épocas, orientando diversos escalões de
+            formação, equipas femininas e masculinas, bem como a equipa da Proliga.
+          </p>
+
+          <p>
+            Passou ainda pelo Clube Atlético de Queluz, Angrabasket e Sport Club
+            Lusitânia, acumulando experiência na formação e no alto rendimento.
+            Atualmente é treinador principal do Maia Basket Clube na Proliga, sendo
+            reconhecido pela organização ofensiva, velocidade de decisão e
+            desenvolvimento de jogadores.
+          </p>
+        </div>
       </div>
 
       <div class="card speaker-card">
@@ -463,6 +608,19 @@ header {
         <h3>Paulo Neta</h3>
         <p>Formador convidado</p>
         <span>O treinador como parte de um sistema</span>
+
+        <button class="bio-button" type="button" onclick="toggleBio(this)">
+          Ver percurso
+        </button>
+
+        <div class="speaker-bio">
+          <p>
+            Diretor Técnico Nacional da Federação Portuguesa de Basquetebol,
+            com experiência anterior como Diretor Técnico Regional da
+            Associação de Basquetebol do Porto. Desenvolve também atividade
+            na área do ensino e da formação de treinadores.
+          </p>
+        </div>
       </div>
 
       <div class="card speaker-card">
@@ -470,6 +628,19 @@ header {
         <h3>Nuno Monteiro</h3>
         <p>Formador convidado</p>
         <span>Faltas antidesportivas · Comunicação árbitro/treinador</span>
+
+        <button class="bio-button" type="button" onclick="toggleBio(this)">
+          Ver percurso
+        </button>
+
+        <div class="speaker-bio">
+          <p>
+            Árbitro, comissário e observador ligado à Associação de
+            Basquetebol do Porto, com experiência na arbitragem e no
+            acompanhamento técnico de juízes. Desenvolve também trabalho
+            na formação e valorização da arbitragem.
+          </p>
+        </div>
       </div>
 
       <div class="card speaker-card">
@@ -477,37 +648,30 @@ header {
         <h3>João Figueiredo</h3>
         <p>Formador convidado</p>
         <span>Pick and roll · Soluções ofensivas e defesa agressiva</span>
-      </div>
 
-    </div>
-  </div>
-</section>
+        <button class="bio-button" type="button" onclick="toggleBio(this)">
+          Ver percurso
+        </button>
 
-<section class="white">
-  <div class="container">
-    <h2>Programa</h2>
+        <div class="speaker-bio">
+          <p>
+            Treinador de Grau III e antigo jogador profissional, com mais de duas
+            décadas de experiência dentro do jogo. Depois de representar vários clubes
+            como atleta, iniciou um percurso como treinador que o levou da formação
+            e do Illiabum à liderança da UD Oliveirense na Liga Betclic.
+          </p>
 
-    <div class="grid">
-      <div class="card">
-        <h3>Sábado, 29 Agosto</h3>
-        <div class="programa">
-          <p><strong>09h00 - 12h45</strong> — Sessões da manhã</p>
-          <p><strong>12h45 - 14h45</strong> — Pausa para almoço</p>
-          <p><strong>14h45 - 18h30</strong> — Sessões da tarde</p>
+          <p>
+            Na Oliveirense, foi eleito Treinador do Ano da Liga Betclic em 2023/24
+            e conquistou a Taça Hugo dos Santos em 2024/25. É também treinador de
+            Seleções Nacionais jovens e assume agora o comando do SC Braga. No Clinic,
+            partilhará soluções ofensivas e defensivas de pick and roll aplicadas ao
+            contexto competitivo de alto nível.
+          </p>
         </div>
       </div>
 
-      <div class="card">
-        <h3>Domingo, 30 Agosto</h3>
-        <div class="programa">
-          <p><strong>09h00 - 12h45</strong> — Sessões da manhã</p>
-          <p><strong>12h45 - 14h45</strong> — Pausa para almoço</p>
-          <p><strong>14h45 - 18h30</strong> — Sessões da tarde</p>
-        </div>
-      </div>
     </div>
-
-    <p class="small">Programa detalhado sujeito a confirmação final.</p>
   </div>
 </section>
 
@@ -621,6 +785,18 @@ header {
   </div>
 </section>
 
+<section class="white">
+  <div class="container">
+
+    <div class="technical-coordination">
+      <p class="coordination-label">Coordenação Técnica</p>
+      <h3>Daniela Gomes</h3>
+      <p>Coordenadora Técnica do Clinic</p>
+    </div>
+
+  </div>
+</section>
+
 <section class="partners">
 
     <div class="container">
@@ -691,6 +867,15 @@ header {
 
   updateCountdown();
   setInterval(updateCountdown, 1000);
+  
+  function toggleBio(button) {
+    const bio = button.nextElementSibling;
+    const estaAberta = bio.classList.toggle("open");
+
+    button.textContent = estaAberta
+      ? "Ocultar biografia"
+      : "Ver biografia";
+  }
 </script>
 </body>
 </html>
