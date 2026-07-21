@@ -333,31 +333,6 @@ header {
   color: #444;
 }
 
-.bio-button {
-  margin: 0 20px 22px;
-  padding: 10px 14px;
-  border: 1px solid var(--blue);
-  border-radius: 8px;
-  background: transparent;
-  color: var(--blue);
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.bio-button:hover {
-  background: var(--blue);
-  color: var(--white);
-}
-
-.speaker-bio{
-    display:none;
-    padding:0 20px 22px;
-    font-size:15px;
-    line-height:1.75;
-    color:#444;
-}
-
 .speaker-bio.open{
     display:block;
 }
@@ -384,6 +359,208 @@ header {
   .subtitle {
     font-size: 18px;
   }
+
+  /* INSCRIÇÃO */
+
+.registration-intro {
+  max-width: 760px;
+  margin-bottom: 30px;
+  color: #4a4a4a;
+  font-size: 17px;
+}
+
+.registration-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+  align-items: stretch;
+}
+
+.registration-card {
+  position: relative;
+  background: var(--white);
+  padding: 28px;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  border: 1px solid #e8ebf0;
+  display: flex;
+  flex-direction: column;
+  min-height: 230px;
+}
+
+.registration-card h3 {
+  color: var(--blue);
+  margin-bottom: 12px;
+  font-size: 21px;
+}
+
+.registration-card p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.registration-card .price {
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.registration-card.featured {
+  border: 2px solid var(--red);
+  transform: translateY(-6px);
+}
+
+.registration-badge {
+  position: absolute;
+  top: -14px;
+  right: 18px;
+  background: var(--red);
+  color: var(--white);
+  padding: 7px 13px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.registration-note {
+  display: block;
+  margin-top: 8px;
+  color: #666;
+  font-size: 13px;
+  font-weight: normal;
+}
+
+.registration-action {
+  margin-top: 34px;
+  text-align: center;
+}
+
+
+/* LOCALIZAÇÃO E MAPA */
+
+.location-section {
+  background: var(--white);
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.8fr) minmax(420px, 1.2fr);
+  gap: 40px;
+  align-items: center;
+}
+
+.location-info h2 {
+  margin-bottom: 18px;
+}
+
+.location-info p {
+  color: #444;
+  margin-bottom: 16px;
+  line-height: 1.7;
+}
+
+.location-details {
+  background: var(--light);
+  border-left: 5px solid var(--red);
+  padding: 20px;
+  border-radius: 0 14px 14px 0;
+  margin: 24px 0;
+}
+
+.location-details p {
+  margin: 6px 0;
+}
+
+.map-wrapper {
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 14px 35px rgba(6,27,58,0.14);
+  background: var(--light);
+}
+
+.map-wrapper iframe {
+  display: block;
+  width: 100%;
+  height: 420px;
+  border: 0;
+}
+
+
+/* ALMOÇOS */
+
+.lunch-intro {
+  max-width: 950px;
+  margin-bottom: 30px;
+  color: #444;
+  font-size: 17px;
+}
+
+.lunch-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.lunch-card {
+  background: var(--light);
+  border-radius: 18px;
+  padding: 28px;
+  border-top: 5px solid var(--red);
+}
+
+.lunch-card h3 {
+  color: var(--blue);
+  margin-bottom: 14px;
+}
+
+.lunch-card p {
+  margin: 7px 0;
+}
+
+.lunch-status {
+  display: inline-block;
+  margin-top: 14px;
+  background: #fff4df;
+  color: #805b00;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+
+/* RESPONSIVO */
+
+@media (max-width: 1050px) {
+  .registration-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 800px) {
+  .location-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .map-wrapper iframe {
+    height: 340px;
+  }
+}
+
+@media (max-width: 650px) {
+  .registration-grid,
+  .lunch-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .registration-card.featured {
+    transform: none;
+  }
+
+  .registration-card {
+    min-height: auto;
+  }
+}
+
 }
 </style>
 </head>
@@ -520,7 +697,7 @@ header {
         <img src="assets/jose-ricardo.jpg" alt="José Ricardo Rodrigues">
         <h3>José Ricardo Rodrigues</h3>
         <p>Formador convidado</p>
-        <span>Da formação à competição</span>
+        <span>Chegar a jogar (ligação ao set offense "diamante")</span>
 
         <button class="bio-button" type="button" onclick="toggleBio(this)">
           Ver percurso
@@ -583,12 +760,13 @@ header {
         </button>
 
         <div class="speaker-bio">
-          <p>
-            Treinador do Maia Basket Clube, com experiência no acompanhamento
-            e desenvolvimento de equipas e atletas dos escalões de formação.
-            O seu trabalho está ligado à evolução técnica e coletiva dos
-            jovens jogadores.
-          </p>
+         <p>
+          Pedro Paiva é treinador de basquetebol e integra atualmente a estrutura técnica do Maia Basket, desenvolvendo o seu trabalho sobretudo na formação e evolução de jovens atletas. Ao longo do seu percurso tem privilegiado uma abordagem exigente, focada na melhoria individual dos jogadores e na construção de equipas competitivas.
+        </p>
+
+        <p>
+         Defensor de metodologias de treino práticas e orientadas para o desenvolvimento técnico e tático, procura criar contextos que potenciem a tomada de decisão e o crescimento dos atletas. No Clinic Internacional Cidade da Maia irá partilhar experiências, exercícios e princípios aplicáveis ao treino diário de equipas de formação e competição.
+       </p>
         </div>
       </div>
 
@@ -631,11 +809,12 @@ header {
         </button>
 
         <div class="speaker-bio">
+            <p>
+             Paulo Neta é Diretor-Técnico Nacional da Federação Portuguesa de Basquetebol e uma das maiores referências nacionais na formação de treinadores e no desenvolvimento da modalidade. Licenciado em Desporto e Educação Física e Mestre em Ciências do Desporto pela FADEUP, complementou a sua formação com um Master em Sports Marketing & Communication pela Università Ca' Foscari, em Veneza.
+           </p>
+
           <p>
-            Diretor Técnico Nacional da Federação Portuguesa de Basquetebol,
-            com experiência anterior como Diretor Técnico Regional da
-            Associação de Basquetebol do Porto. Desenvolve também atividade
-            na área do ensino e da formação de treinadores.
+            Ao longo da sua carreira desempenhou funções como Diretor-Técnico Regional da Associação de Basquetebol do Porto, Coordenador Técnico, Coordenador das Seleções Distritais e docente universitário na UMAIA e na FADEUP. É reconhecido pelo seu contributo para a formação de treinadores, investigação científica e desenvolvimento estratégico do basquetebol português.
           </p>
         </div>
       </div>
@@ -652,11 +831,12 @@ header {
 
         <div class="speaker-bio">
           <p>
-            Árbitro, comissário e observador ligado à Associação de
-            Basquetebol do Porto, com experiência na arbitragem e no
-            acompanhamento técnico de juízes. Desenvolve também trabalho
-            na formação e valorização da arbitragem.
-          </p>
+           Nuno Alexandre Rosa Monteiro é uma referência da arbitragem portuguesa, com mais de três décadas de experiência e mais de 1.475 jogos oficiais. Antigo Árbitro FIBA, foi nomeado para competições internacionais como a EuroLeague Women, EuroCup Women e Campeonatos da Europa de seleções jovens.
+         </p>
+
+         <p>
+          Atualmente desempenha funções como Instrutor FIBA, Comissário Internacional e Comissário/Observador da Federação Portuguesa de Basquetebol, dedicando-se à formação, avaliação e desenvolvimento de árbitros. O seu percurso é reconhecido pelo rigor técnico, imparcialidade e pelo contributo para a evolução da arbitragem nacional e internacional.
+        </p>
         </div>
       </div>
 
@@ -692,31 +872,46 @@ header {
   </div>
 </section>
 
-<section>
+<section id="inscricao">
   <div class="container">
     <h2>Inscrição</h2>
 
     <div class="grid">
+
       <div class="card">
         <h3>Inscrição Geral</h3>
-        <p>Acesso aos dois dias do Clinic.</p>
+        <p>Acesso presencial aos dois dias do Clinic.</p>
         <div class="price">40€</div>
       </div>
 
       <div class="card">
-        <h3>Certificação</h3>
-        <p>Ação creditada com 3.0 créditos IPDJ.</p>
-        <div class="price">3.0</div>
+        <h3>Clinic + Gravações</h3>
+        <p>Acesso presencial e às gravações integrais do Clinic.</p>
+        <div class="price">50€</div>
       </div>
 
       <div class="card">
-        <h3>Vagas Previstas</h3>
-        <p>Número estimado de candidatos.</p>
-        <div class="price">200</div>
+        <h3>Sócio ANTB</h3>
+        <p>15% de desconto (sujeito a validação pela ANTB).</p>
+        <div class="price">34€</div>
       </div>
+
+      <div class="card">
+        <h3>Certificação IPDJ</h3>
+        <p>Ação creditada para treinadores.</p>
+        <div class="price">3.0</div>
+      </div>
+
     </div>
 
-    <br>
+    <div style="margin-top:30px;" class="center">
+      <a href="LINK_DO_FORMULARIO" target="_blank" class="btn">
+        Fazer Inscrição
+      </a>
+    </div>
+
+  </div>
+</section>
 
     <a class="btn" href="https://forms.gle/EXb84ibEogxBvDj16" target="_blank">
       Inscreve-te aqui
@@ -724,58 +919,118 @@ header {
   </div>
 </section>
 
-<section class="white">
+<section class="white" id="almocos">
   <div class="container">
+
     <h2>Onde almoçar</h2>
-    <p>
-      Para apoiar os nossos parceiros locais e facilitar a logística dos participantes, teremos menus especiais em restaurantes próximos do pavilhão.
-      A escolha do restaurante será feita no formulário de inscrição.
+
+    <p class="lunch-intro">
+      Para apoiar os nossos parceiros locais e facilitar a logística dos participantes,
+      estarão disponíveis opções de almoço próximas do pavilhão.
+      A reserva é efetuada no formulário de inscrição.
     </p>
 
-    <br>
+    <div class="lunch-grid">
 
-    <div class="grid">
-      <div class="card">
-        <h3>Restaurante 1</h3>
-        <p><strong>Menu:</strong> a confirmar</p>
-        <p><strong>Valor:</strong> a confirmar</p>
-        <p><strong>Distância:</strong> perto do pavilhão</p>
-        <p><strong>Lugares:</strong> limitados</p>
+<div class="lunch-card">
+  <h3>Bar Maia Basket</h3>
+
+  <p><strong>Menu de sábado:</strong> A confirmar</p>
+  <p><strong>Menu de domingo:</strong> A confirmar</p>
+  <p><strong>Valor:</strong> 13€</p>
+  <p><strong>Localização:</strong> No interior do Pavilhão Municipal da Nortecoop.</p>
+
+  <span class="lunch-status">
+    Informação em atualização
+  </span>
+</div>
+
+      <div class="lunch-card">
+        <h3>Nobre Pão</h3>
+
+        <p><strong>Menu de sábado:</strong> A confirmar</p>
+        <p><strong>Menu de domingo:</strong> A confirmar</p>
+        <p><strong>Valor:</strong> 13€</p>
+        <p><strong>Distância:</strong> Aproximadamente 3 minutos a pé</p>
+
+        <span class="lunch-status">
+          Informação em atualização
+        </span>
+
+        <a
+          href="https://maps.app.goo.gl/Gqf9JiS2rCB3GRJSA"
+          target="_blank"
+          rel="noopener"
+          class="btn"
+          style="margin-top:18px;"
+        >
+          Ver localização
+        </a>
       </div>
 
-      <div class="card">
-        <h3>Restaurante 2</h3>
-        <p><strong>Menu:</strong> a confirmar</p>
-        <p><strong>Valor:</strong> a confirmar</p>
-        <p><strong>Distância:</strong> perto do pavilhão</p>
-        <p><strong>Lugares:</strong> limitados</p>
-      </div>
-
-      <div class="card">
-        <h3>Restaurante 3</h3>
-        <p><strong>Menu:</strong> a confirmar</p>
-        <p><strong>Valor:</strong> a confirmar</p>
-        <p><strong>Distância:</strong> perto do pavilhão</p>
-        <p><strong>Lugares:</strong> limitados</p>
-      </div>
     </div>
+
   </div>
 </section>
 
-<section>
+<section class="location-section" id="localizacao">
   <div class="container">
-    <h2>Localização</h2>
 
-    <div class="mapa">
-      <h3>📍 Pavilhão Municipal da Nortecoop</h3>
-      <p>
-        O evento decorrerá no Pavilhão Municipal da Nortecoop, com restaurantes parceiros localizados a curta distância a pé.
-      </p>
-      <br>
-      <p>🅿️ Estacionamento nas proximidades</p>
-      <p>🍽️ Restaurantes parceiros próximos</p>
-      <p>🚶 Deslocações possíveis a pé</p>
+    <div class="location-grid">
+
+      <div class="location-info">
+
+        <h2>Localização</h2>
+
+        <p>
+          O <strong>I Clinic Internacional Cidade da Maia</strong> realiza-se no
+          <strong>Pavilhão Municipal da Nortecoop</strong>.
+        </p>
+
+        <div class="location-details">
+
+          <p>
+            <strong>Local:</strong><br>
+            Pavilhão Municipal da Nortecoop
+          </p>
+
+          <p>
+            <strong>Morada:</strong><br>
+            Rua de Ardegães 631, 4425-114 Águas Santas, Maia
+          </p>
+
+          <p>
+            <strong>Estacionamento:</strong><br>
+            Disponível nas imediações do pavilhão.
+          </p>
+
+        </div>
+
+        <a
+          href="LINK_NORMAL_GOOGLE_MAPS"
+          target="_blank"
+          rel="noopener"
+          class="btn"
+        >
+          Abrir no Google Maps
+        </a>
+
+      </div>
+
+      <div class="map-wrapper">
+
+        <iframe
+          src="LINK_IFRAME_GOOGLE_MAPS"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Localização do Pavilhão Municipal da Nortecoop">
+        </iframe>
+
+      </div>
+
     </div>
+
   </div>
 </section>
 
